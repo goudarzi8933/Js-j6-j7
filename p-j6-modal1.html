@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" class="btnshow" onclick="showModal()">
+        Modal
+    </button>
+    <div id="modal">
+        <div class="modal__content">
+            <form action="">
+                <div class="form__details">
+                    <div class="name">
+                        <label for="name">your name</label>
+                        <input type="text" id="name" name="name" placeholder="name" required>
+                    </div>
+
+                    <div class="email">
+                        <label for="email">your email</label>
+                        <input type="email" id="email" name="email" id="email" placeholder="email" required>
+                    </div>
+
+                    <div class="pass">
+                        <label for="password">your password</label>
+                        <input type="password" name="password" id="password" placeholder="password" required>
+                    </div>
+
+                    <div class="pass">
+                        <label for="password">Confrim password</label>
+                        <input type="password" name="password" id="confrim" placeholder="Confrim your password"
+                            required>
+                    </div>
+                </div>
+                <button class="submit" id="register">register</button>
+            </form>
+
+            <button class="btnclose" onclick="hideModal()">X</button>
+        </div>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>

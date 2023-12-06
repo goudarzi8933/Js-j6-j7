@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "Vazir";
+  src: url("../fonts/Vazir.eot");
+  src: local("../fonts/Vazir"), url("../fonts/Vazir.woff") format("woff"),
+    url("../fonts/Vazir.ttf") format("truetype"),
+    url("../fonts/Vazir.svg") format("svg");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* *********** modal 1 ************** */
+
+.btnshow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 10% auto;
+  width: 400px;
+  height: 450px;
+  background-color: #494747;
+  z-index: 1;
+  display: none;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+form {
+  margin: 2.2rem 1rem;
+}
+
+.form__details label {
+  display: block;
+  font-size: 1.1rem;
+  padding-right: 1rem;
+  margin-top: 1rem;
+}
+
+.form__details input {
+  background-color: #e5e0e0;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 1rem 0 1rem;
+}
+
+/* .form__details input:focus {
+            border: none !important;
+        } */
+
+.submit {
+  font-size: 1rem;
+  background-color: #2351f5;
+  padding: 0.7rem 1.5rem;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-align: right;
+  margin-top: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.submit:hover {
+  background-color: #152765;
+}
+
+.btnclose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  width: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.btnclose:hover {
+  background-color: darkgray;
+}
+
+.modal__content {
+  background-color: #fff;
+}

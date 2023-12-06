@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" class="btnshow" onclick="showModalSec()">
+        Modal
+    </button>
+    <div id="modal">
+        <div class="modal__content">
+            <form action="">
+                <div class="form__details">
+                    <div class="name">
+                        <label for="fname">your name</label>
+                        <input type="text" id="fname" name="fname" onkeyup="eventHandler()" placeholder="name" required>
+                        <span style="display: none;color: red;" id="fnameError">حداقل 3 حرف باشد</span>
+                    </div>
+
+                    <div class="email">
+                        <label for="email">your email</label>
+                        <input type="email" id="email" name="email" id="email" placeholder="example@example.com"
+                            onselect="select()" required>
+                    </div>
+
+                    <div class="pass">
+                        <label for="password">your password</label>
+                        <input type="password" name="password" id="password" onfocus="highlightInput(this)"
+                            placeholder="password" required>
+                        <span style="display: none;color: red;" id="passError">حداقل 5 حرف باشد</span>
+                    </div>
+                </div>
+                <button class="submit" id="register">register</button>
+            </form>
+
+            <button class="btnclose" onclick="hideModalSec()">X</button>
+        </div>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
