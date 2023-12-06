@@ -12,6 +12,16 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Vazir";
+  direction: rtl;
+  background-color: rgb(24, 31, 31);
+}
+
 /* *********** modal 1 ************** */
 
 .btnshow {
@@ -95,4 +105,124 @@ form {
 
 .modal__content {
   background-color: #fff;
+}
+
+/* *************** multistepreg ****************** */
+#regForm {
+  width: 400px;
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
+}
+
+#regForm fieldset {
+  background: white;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  /* width: 80%; */
+  height: 400px;
+  margin: 0 10%;
+  position: absolute;
+}
+
+#regForm fieldset:not(:first-of-type) {
+  display: none;
+}
+
+#regForm input,
+#regForm textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  color: #2c3e50;
+  font-size: 13px;
+}
+
+.fs-title {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.fs-subtitle {
+  font-weight: normal;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+#steps {
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+#steps li {
+  list-style-type: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 9px;
+  width: 33.33%;
+  float: right;
+  position: relative;
+}
+
+#steps li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 20px;
+  line-height: 20px;
+  display: block;
+  font-size: 10px;
+  color: #333;
+  background: white;
+  border-radius: 3px;
+  margin: 0 auto 5px auto;
+}
+
+#steps li:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: white;
+  position: absolute;
+  right: -50%;
+  top: 9px;
+  z-index: -1;
+}
+
+#steps li:first-child:after {
+  content: none;
+}
+
+#steps li.active:before,
+#steps li.active:after {
+  background: #27ae60;
+  color: white;
+}
+
+/* .tab { 
+      display: none; 
+  } */
+
+button {
+  background-color: #04aa6d;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
 }
