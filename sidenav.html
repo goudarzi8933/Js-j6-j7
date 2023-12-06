@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .bar {
+            border: none;
+            font-size: 25px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        #sidenav {
+            position: fixed;
+            border: 1px solid lightblue;
+            background-color: rgba(179, 223, 228, 0.452);
+            left: -200px;
+            top: 0;
+            height: 100%;
+            width: 200px;
+            transition: 1s;
+        }
+
+        nav .logo {
+            align-items: center;
+            margin: 0 5px;
+            border: none;
+            font-size: 25px;
+            cursor: pointer;
+            padding: 5px;
+
+        }
+
+        nav .logo .fa {
+            color: rgb(147, 13, 13);
+            padding: 5px;
+            text-align: right;
+
+        }
+
+        nav .logo:hover,
+        nav .logo .fa:hover {
+            background-color: rgb(99, 53, 53);
+            color: #fff;
+            padding: 5px;
+        }
+
+        .logo .logo-name {
+            color: #333;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .sidebar .sidebar-content {
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px 16px;
+        }
+
+        .sidebar-content .list {
+            list-style: none;
+        }
+
+        .list .nav-link {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            padding: 14px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .lists .nav-link:hover {
+            background-color: #4070f4;
+        }
+
+        .nav-link .link {
+            font-size: 16px;
+            color: #444242;
+            font-weight: 400;
+        }
+
+        .lists .nav-link:hover .link,
+        .bottom-cotent .nav-link:hover .link {
+            color: #fff;
+        }
+
+        .bottom-cotent .nav-link:hover {
+            background-color: rgb(215, 81, 137);
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="showSidenav()" class="bar">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <nav id="sidenav">
+        <button onclick="hideSidenav()" class="logo">
+            <i class="fa fa-close"></i>
+        </button>
+
+        <div class="sidebar">
+
+            <div class="sidebar-content">
+                <ul class="lists">
+                    <li class="list">
+                        <a href="#" class="nav-link">
+                            <span class="link">Home</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" class="nav-link">
+                            <span class="link">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" class="nav-link">
+                            <span class="link">Notifications</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" class="nav-link">
+                            <span class="link">Messages</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" class="nav-link">
+                            <span class="link">Suggest</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="bottom-cotent">
+                    <li class="list">
+                        <a href="#" class="nav-link">
+                            <span class="link">Logout</span>
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <script>
+        let showSidenav = function () {
+            document.getElementById('sidenav').style.left = '0px';
+        }
+        let hideSidenav = function () {
+            document.getElementById('sidenav').style.left = '-200px';
+        }
+    </script>
+
+</body>
+
+</html>
