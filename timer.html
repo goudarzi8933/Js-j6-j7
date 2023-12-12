@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            background: linear-gradient(90deg, rgb(90, 183, 36) 23%, rgb(3, 95, 148) 100%) !important;
+            font-family: tahoma;
+            color: #FFF;
+        }
+
+        .cm {
+            max-width: 85em;
+            min-width: 320px;
+            margin: 25% auto;
+            padding: 0 0.5em;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .box {
+            margin: 0 auto;
+            width: 60%;
+            text-align: center;
+            border: 1px solid #FFF;
+            padding: 3rem;
+        }
+
+        button {
+            background: #487a8a;
+            border: 1px solid #FFF;
+            color: #FFF;
+            padding: 1em 2em;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: 0.5s;
+        }
+
+        button:hover {
+            color: #fff;
+            background: rgba(10, 107, 75, 0.762);
+        }
+
+        #timer {
+            margin-bottom: 1em;
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cm">
+        <div class="box">
+            <div id="timer">
+                <span id="seconds">00</span>
+                :
+                <span id="minutes">00</span>
+                :
+                <span id="hours">00</span>
+            </div>
+            <button onclick="start()">شروع</button>
+            <button onclick="stop()">توقف</button>
+            <button onclick="reset()">شروع مجدد</button>
+        </div>
+    </div>
+
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>

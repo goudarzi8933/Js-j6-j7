@@ -1,4 +1,47 @@
- 
+// --------------- timer --------------- 
+
+        let hr = document.getElementById('hours');
+        let min = document.getElementById('minutes');
+        let sec = document.getElementById('seconds');
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+        let Interval;
+
+        function start() {
+            clearInterval(Interval);
+            Interval = setInterval(startTimer, 1);
+        }
+
+        function stop() {
+            clearInterval(Interval);
+        }
+
+        function reset() {
+            clearInterval(Interval);
+            sec.innerHTML = '00';
+            min.innerHTML = '00';
+            hr.innerHTML = '00';
+            hour = 0;
+            minutes = 0;
+            seconds = 0;
+        }
+
+        function startTimer() {
+            seconds++;
+            if (seconds == 60) {
+                minutes++;
+                seconds = 0;
+            }
+            if (minutes == 60) {
+                hours++;
+                minutes = 0;
+            }
+            sec.innerText = (seconds < 10) ? `0${seconds}` : seconds;
+            min.innerText = (minutes < 10) ? `0${minutes}` : minutes;
+            hr.innerText = (hours < 10) ? `0${hours}` : hours;
+        }
+        
 //  *********** modal 1 ***************
  let showModal = function () {
             document.getElementById('modal').style.display = 'block';
