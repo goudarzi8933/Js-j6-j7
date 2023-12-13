@@ -109,14 +109,16 @@ body {
 }
 
 /* *************** multistepreg ****************** */
+
 #regForm {
-  width: 400px;
+  width: 600px;
   margin: 50px auto;
   text-align: center;
   position: relative;
 }
 
 #regForm fieldset {
+  width: 400px;
   background: white;
   border: 0 none;
   border-radius: 3px;
@@ -126,10 +128,6 @@ body {
   height: 400px;
   margin: 0 10%;
   position: absolute;
-}
-
-#regForm fieldset:not(:first-of-type) {
-  display: none;
 }
 
 #regForm input,
@@ -164,18 +162,19 @@ body {
 
 #steps li {
   list-style-type: none;
-  color: white;
-  text-transform: uppercase;
-  font-size: 9px;
-  width: 33.33%;
+  color: #000;
+  font-size: 12px;
+  width: 100px;
   float: right;
   position: relative;
+  margin-right: 55px;
 }
 
-#steps li:before {
-  content: counter(step);
+/* #steps li:before {
+  content: "";
   counter-increment: step;
-  width: 20px;
+  width: 40px;
+  height: 40px;
   line-height: 20px;
   display: block;
   font-size: 10px;
@@ -183,7 +182,7 @@ body {
   background: white;
   border-radius: 3px;
   margin: 0 auto 5px auto;
-}
+} */
 
 #steps li:after {
   content: "";
@@ -191,7 +190,7 @@ body {
   height: 2px;
   background: white;
   position: absolute;
-  right: -50%;
+  right: -70%;
   top: 9px;
   z-index: -1;
 }
@@ -226,4 +225,5 @@ button:hover {
 
 #prevBtn {
   background-color: #bbbbbb;
+  color: #000000c1;
 }
