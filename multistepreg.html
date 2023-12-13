@@ -1,98 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
+    <style>
+        form {
+            position: relative;
+        }
+
+        .btnfw {
+            position: absolute;
+            bottom: 10px;
+            right: 30px;
+        }
+
+        .btnbw {
+            position: absolute;
+            bottom: 10px;
+            right: 150px;
+        }
+    </style>
 </head>
 
 <body>
-    <form id="regForm" style="position: relative;">
+    <form id="regForm">
 
         <ul id="steps">
-            <li class="active step">حساب کاربری</li>
-            <li class="step">سوابق تحصیلی</li>
-            <li class="step">مشخصات فردی</li>
+            <li id="step1" class="active" onclick="goStep(1)">حساب کاربری</li>
+            <li id="step2" onclick="goStep(2)">سوابق تحصیلی</li>
+            <li id="step3" onclick="goStep(3)">مشخصات فردی</li>
         </ul>
 
-        <fieldset id="step1" class="tab">
+        <fieldset id="field1" class="tab">
             <h2 class="fs-title">ایجاد حساب کاربری</h2>
             <h3 class="fs-subtitle">قدم اول</h3>
             <input type="text" name="email" placeholder="پست الکترونیک" />
             <input type="password" name="pass" placeholder="رمز عبور" />
             <input type="password" name="cpass" placeholder="تکرار رمز عبور" />
+            <button type="button" class="btnfw" onclick=" goStep(2)">صفحه بعدی</button>
         </fieldset>
 
-        <fieldset id="step2" class="tab">
+        <fieldset id="field2" class="tab">
             <h2 class="fs-title"> سوابق تحصیلی </h2>
             <h3 class="fs-subtitle"> قدم دوم </h3>
             <input type="text" name="twitter" placeholder="راهنمایی" />
             <input type="text" name="facebook" placeholder="دبیرستان" />
             <input type="text" name="gplus" placeholder="دانشگاه" />
+            <button type="button" class="btnfw" onclick="goStep(3)">صفحه بعدی</button>
+            <button type="button" class="btnbw" id="prevBtn" onclick="goStep(1)">صفحه قبلی</button>
+
         </fieldset>
 
-        <fieldset id="step3" class="tab">
+        <fieldset id="field3" class="tab">
             <h2 class="fs-title">مشخصات فردی</h2>
             <h3 class="fs-subtitle">قدم سوم</h3>
             <input type="text" name="fname" placeholder="نام" />
             <input type="text" name="lname" placeholder="نام خانوادگی" />
             <input type="text" name="phone" placeholder="تلفن" />
             <textarea name="address" placeholder="آدرس"></textarea>
+            <button type="button" class="btnfw" onclick="goStep(3)">ثبت</button>
+            <button type="button" class="btnbw" id="prevBtn" onclick="goStep(2)">صفحه قبلی</button>
+
         </fieldset>
 
-        <div style=" position: absolute;bottom: -415px; right: 70px;">
-            <button type="button" id="nextBtn" onclick="nextPrev()">صفحه بعدی</button>
-            <button type="button" id="prevBtn" onclick="nextPrev()">صفحه قبلی</button>
-        </div>
+        <!-- <div class="btnfb">
+        </div> -->
     </form>
 
     <script>
-        let currentTab = 0;
-        let steps = 0;
-        showTab(currentTab);
-        updateSteps();
+        let field1 = document.getElementById("field1");
+        let field2 = document.getElementById("field2");
+        let field3 = document.getElementById("field3");
+        let step1 = document.getElementById("step1");
+        let step2 = document.getElementById("step2");
+        let step3 = document.getElementById("step3");
 
-        let updateSteps = function () {
-            let countSteps = document.getElementById('steps');
-            if (steps == 0) {
-                countSteps.style.backgroundColor = 'blue';
-            } else if (steps >= 0 && steps < countSteps.length) {
-                countSteps.style.backgroundColor = 'green';
-            } else {
-                countSteps.style.backgroundColor = 'white';
+        let step = 1;
+
+        function goStep(num) {
+            if (num == 1) {
+                document.getElementById("field1").style.display = "block";
+                document.getElementById("field2").style.display = 'none';
+                document.getElementById("field3").style.display = 'none';
+                document.getElementById('step1').style.backgroundColor = '#c6f01d';
+                document.getElementById('step2').style.backgroundColor = 'white';
+                document.getElementById('step3').style.backgroundColor = 'white';
+                // step1.style.backgroundColor = 'green';
+                // field1.style.display = 'block';
+                // field2.style.display = 'none';
+                // field3.style.display = 'none';
+            }
+            else if (num == 2) {
+                document.getElementById("field1").style.display = "none";
+                document.getElementById("field2").style.display = 'block';
+                document.getElementById("field3").style.display = 'none';
+                document.getElementById('step1').style.backgroundColor = 'green';
+                document.getElementById("step2").style.backgroundColor = 'yellow';
+                document.getElementById("step3").style.backgroundColor = 'white';
+                // step1.style.backgroundColor = 'green';
+                // step2.style.backgroundColor = 'green';
+                // field1.style.display = 'none';
+                // field2.style.display = 'block';
+                // field3.style.display = 'none';
+            }
+            else if (num == 3) {
+                document.getElementById("field1").style.display = "none";
+                document.getElementById("field2").style.display = 'none';
+                document.getElementById("field3").style.display = 'block';
+                document.getElementById('step1').style.backgroundColor = 'green';
+                document.getElementById("step2").style.backgroundColor = 'green';
+                document.getElementById("step3").style.backgroundColor = 'yellow';
+
             }
         }
 
-        function showTab(n) {
-            let x = document.getElementsByClassName("tab");
-            x[n].style.display = "block";
-            if (n == 0) {
-                document.getElementById("prevBtn").style.display = "none";
-            } else {
-                document.getElementById("prevBtn").style.display = "inline";
-            }
-            if (n == (x.length - 1)) {
-                document.getElementById("nextBtn").innerHTML = "ثبت";
-            } else {
-                document.getElementById("nextBtn").innerHTML = "صفحه بعدی";
-            }
-        }
-
-
-        function nextPrev() {
-            let steps = document.getElementsByClassName("tab");
-            let n = 0;
-            if (n == 1) return false;
-            steps[currentTab].style.display = "block";
-            currentTab = currentTab + n;
-            if (currentTab >= steps.length) {
-                document.getElementById("regForm").submit();
-                return false;
-            }
-            showTab(currentTab);
-        }
+        goStep(1);
 
     </script>
 

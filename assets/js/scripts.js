@@ -22,7 +22,7 @@
             sec.innerHTML = '00';
             min.innerHTML = '00';
             hr.innerHTML = '00';
-            hour = 0;
+            hours = 0;
             minutes = 0;
             seconds = 0;
         }
