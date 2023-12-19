@@ -41,6 +41,15 @@
             min.innerText = (minutes < 10) ? `0${minutes}` : minutes;
             hr.innerText = (hours < 10) ? `0${hours}` : hours;
         }
+        let captures =['00:00:10','00:00:25','00:00:40'];
+        function updateCaptures(){
+
+            document.getElementById('captures').innerHTML+='';
+            document.getElementById('captures').innerHTML+=`<li>${captures[0]}</li>`;
+            document.getElementById('captures').innerHTML+=`<li>${captures[1]}</li>`;
+            document.getElementById('captures').innerHTML+=`<li>${captures[2]}</li>`;
+        }
+        updateCaptures()
         
 //  *********** modal 1 ***************
  let showModal = function () {
